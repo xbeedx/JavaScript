@@ -70,6 +70,9 @@ async function setRules() {
     if (response.statusCode !== 201) {
         throw new Error(response.body);
     }
+    var str = "Listening to: ";
+    rules.forEach(rule => str += rule.value.substring(5)+",");
+    console.log(str)
     return (response.body);
 
 }

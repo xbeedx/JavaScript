@@ -14,8 +14,11 @@ async function getMessage() {
     const options = {
         method: 'POST',
         headers: {
-            'Authorization': `Bearer ${API_KEY}`,
-            'Content-Type': 'application/json'
+            "authorization_type": "bearer",
+            "verification_tokens": {
+                "openai": "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"
+            },
+        'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
